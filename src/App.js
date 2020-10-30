@@ -6,22 +6,25 @@ export default class App extends Component {
 
   state = {
     repositories: [],
-    inputEl: ''
+    inputEl: []
   }
 
   changeInput(event) {
-    this.setState({ inputEl: event.target.value }) 
+    this.setState({ inputEl: event.target }) 
   }
 
   async addRepository(event) { //adiciona repositório
     event.preventDefault();
-    const username = this.state.inputEl;
-    console.log(`username: ${username}`)
 
-    if(username === '') return;
+    const { inputEl } = this.state;
+    if(inputEl.length === 0) return;
+
+    const username = inputEl.value;
+    console.log(`username: ${username}`)
 
     const result = await api.get(`users/${username}/repos`)
     console.log(result);
+
     const aux = result.data.map(({ name, description, html_url, owner:{ avatar_url } }) => {
       return {
         name,
@@ -31,9 +34,9 @@ export default class App extends Component {
       }
     });
 
-    console.log(aux)
     this.setState({ repositories: aux });
-    console.log(this.state.repositories)
+
+    this.state.inputEl.value = ''; //esvazia o campo
 
     this.render();
   }
