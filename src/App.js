@@ -14,10 +14,10 @@ export default class App extends Component {
     event.preventDefault();
 
     const obj = {
-      name: 'Elder Samuel',
-      description: 'test',
+      name: 'Repository Name',
+      description: 'description',
       avatar_url: 'https://avatars3.githubusercontent.com/u/43392457?v=4',
-      html_url: 'https://github.com/ElderSam'
+      html_url: `https://github.com/{USER_NAME}`
     }
 
     const { repositories } = this.state
