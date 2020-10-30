@@ -7,13 +7,8 @@ export default class App extends Component {
     repositories: []
   }
 
-  componentDidMount(){
-    const repoForm = document.getElementById('repository-form')
- 
-    repoForm.onsubmit = (event) => {
-      this.addRepository(event)
-    }
-  }
+  /*componentDidMount(){
+  }*/
 
   addRepository(event) {
     event.preventDefault();
@@ -25,14 +20,18 @@ export default class App extends Component {
       html_url: 'https://github.com/ElderSam'
     }
 
-    const aux = this.state.repositories
-    aux.push(obj)
+    const { repositories } = this.state
+    repositories.push(obj)
     
-    this.setState({repositories: aux})
+    this.setState({ repositories })
     console.log(this.state.repositories)
+
+    this.render();
   }
 
   render() {
+    
+    const { repositories } = this.state;
 
     return(
       <div className="App">
@@ -40,19 +39,22 @@ export default class App extends Component {
         <h1>App GitHub!</h1>       
       </header>
     
-      <form id="repository-form">
+      <form id="repository-form" onSubmit={ (event) => this.addRepository(event) }>
         <input type="text" name="username" placeholder="digite um usuário"/>
         <button type="submit">Pesquisar</button>
       </form>
 
       <ul id="repository-list">
-        <li>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTLsZtEs4N7hlthpkaRUBwqcToenaNK7tpEg&usqp=CAU" alt=""/>
-          <strong>USUÁRIO</strong>
-          <p>Descrição </p>
-          <a href="https://www.reactjs.org" target="_blank" rel="noopener noreferrer">link</a>
-        </li>
-        
+
+        {repositories.map(repo => (
+          <li>
+            <img src={ repo.avatar_url } alt="avatar url"/>
+            <strong>{ repo.name }</strong>
+            <p>{ repo.description }</p>
+            <a href={ repo.html_url } target="_blank" rel="noopener noreferrer">link</a>
+          </li>
+        ))}
+
       </ul>
 
     </div>
