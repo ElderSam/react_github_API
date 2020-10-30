@@ -22,15 +22,23 @@ export default class App extends Component {
 
     const result = await api.get(`users/${username}/repos`)
     console.log(result);
+    const aux = result.data.map(({ name, description, html_url, owner:{ avatar_url } }) => {
+      return {
+        name,
+        description,
+        html_url,
+        avatar_url,
+      }
+    });
 
-    this.setState({ repositories: result.data });
+    console.log(aux)
+    this.setState({ repositories: aux });
     console.log(this.state.repositories)
 
     this.render();
   }
 
-  render() {
-    
+  render() { 
     const { repositories } = this.state;
 
     return(
@@ -49,9 +57,9 @@ export default class App extends Component {
 
       <ul id="repository-list">
 
-        {repositories.map(repo => (
+        {repositories.map((repo) => (
           <li>
-            <img src={ repo.owner.avatar_url } alt="avatar url"/>
+            <img src={ repo.avatar_url } alt="avatar url"/>
             <strong>{ repo.name }</strong>
             <p>{ repo.description }</p>
             <a href={ repo.html_url } target="_blank" rel="noopener noreferrer">link</a>
