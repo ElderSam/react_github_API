@@ -1,29 +1,29 @@
 import './App.css';
 import React, { Component } from 'react';
+import api from './api';
 
 export default class App extends Component {
 
   state = {
-    repositories: []
+    repositories: [],
+    inputEl: ''
   }
 
-  /*componentDidMount(){
-  }*/
+  changeInput(event) {
+    this.setState({ inputEl: event.target.value }) 
+  }
 
-  addRepository(event) {
+  async addRepository(event) { //adiciona repositório
     event.preventDefault();
+    const username = this.state.inputEl;
+    console.log(`username: ${username}`)
 
-    const obj = {
-      name: 'Repository Name',
-      description: 'description',
-      avatar_url: 'https://avatars3.githubusercontent.com/u/43392457?v=4',
-      html_url: `https://github.com/{USER_NAME}`
-    }
+    if(username === '') return;
 
-    const { repositories } = this.state
-    repositories.push(obj)
-    
-    this.setState({ repositories })
+    const result = await api.get(`users/${username}/repos`)
+    console.log(result);
+
+    this.setState({ repositories: result.data });
     console.log(this.state.repositories)
 
     this.render();
@@ -40,7 +40,10 @@ export default class App extends Component {
       </header>
     
       <form id="repository-form" onSubmit={ (event) => this.addRepository(event) }>
-        <input type="text" name="username" placeholder="digite um usuário"/>
+        <input type="text" name="username"
+          placeholder="digite um usuário"
+          onChange={ (event) => this.changeInput(event)}  
+        />
         <button type="submit">Pesquisar</button>
       </form>
 
@@ -48,7 +51,7 @@ export default class App extends Component {
 
         {repositories.map(repo => (
           <li>
-            <img src={ repo.avatar_url } alt="avatar url"/>
+            <img src={ repo.owner.avatar_url } alt="avatar url"/>
             <strong>{ repo.name }</strong>
             <p>{ repo.description }</p>
             <a href={ repo.html_url } target="_blank" rel="noopener noreferrer">link</a>
