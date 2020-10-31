@@ -38,29 +38,28 @@ export default class App extends Component {
     this.setState({ repositories: aux });
 
     this.state.inputEl.value = ''; //esvazia o campo
-
-    this.render();
   }
 
   render() { 
     const { repositories } = this.state;
+    console.log(repositories)
 
     return(
       <div className="App">
-      <header className="App-header">
-        <h1>App GitHub!</h1>       
-      </header>
-    
-      <form id="repository-form" onSubmit={ (event) => this.addRepository(event) }>
-        <input type="text" name="username"
-          placeholder="digite um usuário"
-          onChange={ (event) => this.changeInput(event)}  
-        />
-        <button type="submit">Pesquisar</button>
-      </form>
+        <header className="App-header">
+          <h1>App GitHub!</h1>       
+        </header>
+      
+        <form id="repository-form" onSubmit={ (event) => this.addRepository(event) }>
+          <input type="text" name="username"
+            placeholder="digite um usuário"
+            onChange={ (event) => this.changeInput(event)}  
+          />
+          <button type="submit">Pesquisar</button>
+        </form>
 
-      <List repos={ repositories }/>
-    </div>
+        <List repos={repositories} />
+      </div>
     );
   }
 }
