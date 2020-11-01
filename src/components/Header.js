@@ -7,11 +7,19 @@ export default class Header extends Component {
 
     constructor(props) {
         super(props);
-        this.doAddRepositoryFromChild = this.doAddRepositoryFromChild.bind(this);
+        this.doListRepositoriesFromChild = this.doListRepositoriesFromChild.bind(this);
     }
 
-    doAddRepositoryFromChild(event) {
-        this.props.addRepository(event);
+    doListRepositoriesFromChild(event) { //pega o valor do campo e chama o método listar do componente pai
+        event.preventDefault();
+
+        const inputEl = event.target[0];
+        if(inputEl.length === 0) return;
+    
+        const username = inputEl.value;
+        console.log(`username: ${username}`)
+    
+        this.props.listRepositories(username);
     }
 
   render() {
@@ -24,7 +32,7 @@ export default class Header extends Component {
 
             <form
             id="repository-form"
-            onSubmit={(event) => this.doAddRepositoryFromChild(event)}
+            onSubmit={(event) => this.doListRepositoriesFromChild(event)}
             >
             <input
                 type="text"

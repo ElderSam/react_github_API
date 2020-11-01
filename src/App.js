@@ -14,19 +14,10 @@ export default class App extends Component {
       inputEl: []
     };
 
-    this.addRepository = this.addRepository.bind(this)
+    this.listRepositories = this.listRepositories.bind(this)
   }
 
-  
-
-  async addRepository(event) { //adiciona repositório
-    event.preventDefault();
-
-    const inputEl = event.target[0];
-    if(inputEl.length === 0) return;
-
-    const username = inputEl.value;
-    console.log(`username: ${username}`)
+  async listRepositories(username) { //adiciona repositório
 
     const result = await api.get(`users/${username}/repos`)
     console.log(result);
@@ -51,7 +42,7 @@ export default class App extends Component {
 
     return(
       <div className="App">
-        <Header addRepository={this.addRepository} />
+        <Header listRepositories={this.listRepositories} />
         <List repos={repositories} />
       </div>
     );
