@@ -6,7 +6,10 @@ instalar dependências:
 iniciar aplicação React:
     npm start
 
+-------------
+OBS: eu tive alguns problemas usando 'material-table', pois não aparecia os ícones da tabe.a Então encontrei esse link https://github.com/mbrn/material-table, que me ajudou a resolver isso. 
 
+--------------------------------------------------------------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

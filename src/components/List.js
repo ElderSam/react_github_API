@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import MaterialTable from "material-table";
+import tableIcons from './MaterialTableIcons';
 
 export default class List extends Component {
     state = {
@@ -32,6 +32,7 @@ export default class List extends Component {
             columns={columns}
             data={repositories}
             title="Tabela de Repositórios"
+            icons={tableIcons}
           />
         );
     }
