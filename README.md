@@ -1,3 +1,12 @@
+Instruções:
+
+instalar dependências: 
+    npm install
+
+iniciar aplicação React:
+    npm start
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
