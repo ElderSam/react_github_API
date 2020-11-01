@@ -7,10 +7,10 @@ export default class Header extends Component {
 
     constructor(props) {
         super(props);
-        this.doListRepositoriesFromChild = this.doListRepositoriesFromChild.bind(this);
+        this.dogetGitHubDataFromChild = this.dogetGitHubDataFromChild.bind(this);
     }
 
-    doListRepositoriesFromChild(event) { //pega o valor do campo e chama o método listar do componente pai
+    dogetGitHubDataFromChild(event) { //pega o valor do campo e chama o método listar do componente pai
         event.preventDefault();
 
         const username = event.target[0].value;
@@ -21,7 +21,7 @@ export default class Header extends Component {
 
         console.log(`username: ${username}`)
     
-        this.props.listRepositories(username);
+        this.props.getGitHubData(username);
     }
 
   render() {
@@ -34,7 +34,7 @@ export default class Header extends Component {
 
             <form
             id="repository-form"
-            onSubmit={(event) => this.doListRepositoriesFromChild(event)}
+            onSubmit={(event) => this.dogetGitHubDataFromChild(event)}
             >
             <input
                 type="text"

@@ -1,0 +1,44 @@
+section {
+    background-color: rgb(137, 255, 137);
+    margin: 20px;
+    padding: 6px;
+
+    display: flex;
+    flex-wrap: wrap; /* para deixar responsivo */
+    justify-content: space-evenly;
+}
+
+section .div-info {
+    background-color: white;
+    padding: 10px;
+    min-width: 200px;
+}
+
+#avatar img {
+    background-color: white;
+    height: 170px;
+    padding: 0;
+    border-radius: 100px;
+    transition: 0.5s;
+}
+
+#avatar img:hover {
+    border-radius: 10px;
+}
+
+section h4 {
+    text-align: center;
+}
+
+#github-link {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+#github-link:hover {
+    background-color: grey;
+}
