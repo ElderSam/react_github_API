@@ -2,8 +2,8 @@ import './List.css';
 import React, { Component } from 'react';
 
 import MaterialTable from "material-table";
-import tableIcons from './MaterialTableIcons';
-import TranslateTable from './TranslateTable.js';
+import tableIcons from './utils/material-table/MaterialTableIcons';
+import TranslateTable from './utils/material-table/TranslateTable';
 
 export default class List extends Component {
     state = {

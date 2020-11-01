@@ -1,3 +1,5 @@
+//https://material-table.com/#/docs/features/localization
+
 const TranslateTable = {
     body: {
         emptyDataSourceMessage: 'Nenhum registro para exibir'
