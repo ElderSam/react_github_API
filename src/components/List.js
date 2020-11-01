@@ -1,8 +1,9 @@
 import './List.css';
-
 import React, { Component } from 'react';
+
 import MaterialTable from "material-table";
 import tableIcons from './MaterialTableIcons';
+import TranslateTable from './TranslateTable.js';
 
 export default class List extends Component {
     state = {
@@ -45,6 +46,7 @@ export default class List extends Component {
             data={repositories}
             title="Tabela de Repositórios"
             icons={tableIcons}
+            localization={TranslateTable}
           />
         );
     }
