@@ -1,3 +1,5 @@
+import './List.css';
+
 import React, { Component } from 'react';
 import MaterialTable from "material-table";
 import tableIcons from './MaterialTableIcons';
@@ -15,7 +17,17 @@ export default class List extends Component {
         const columns = [
           { title: 'Nome', field: 'name' },
           { title: 'Descrição', field: 'description' },
-          { title: 'Link', field: 'html_url' },
+          {
+            title: 'Link',
+            field: 'html_url',
+            render: rowData =>
+              <a href={rowData.html_url}
+              target='_blank' rel='noreferrer'
+              className='repo-link'>
+                Link
+              </a>
+          },
+          
         ]
     
         this.setState({ columns });

@@ -1,0 +1,12 @@
+.repo-link {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.repo-link:hover {
+    background-color: grey;
+}
