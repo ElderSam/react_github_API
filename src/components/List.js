@@ -13,6 +13,14 @@ export default class List extends Component {
         this.setTableColumns()
     }
 
+    renderLoading() {
+      if(this.props.loading === true) {
+        return(
+          <h3 id='loading'>Carregando ...</h3>
+        )
+      }
+    }
+
     setTableColumns() {
         
         const columns = [
