@@ -1,3 +1,8 @@
+
+.MuiToolbar-root { /* toolbar da tabela <MaterialTable> */
+    background-color: rgb(240, 240, 240);
+}
+
 #loading {
     text-align: center;
     color: red;
