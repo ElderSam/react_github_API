@@ -10,10 +10,10 @@ export default class List extends Component {
         columns: []
     }
     componentDidMount() {
-        this.getPage()
+        this.setTableColumns()
     }
 
-    getPage() {
+    setTableColumns() {
         
         const columns = [
           { title: 'Nome', field: 'name' },
