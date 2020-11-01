@@ -13,10 +13,12 @@ export default class Header extends Component {
     doListRepositoriesFromChild(event) { //pega o valor do campo e chama o método listar do componente pai
         event.preventDefault();
 
-        const inputEl = event.target[0];
-        if(inputEl.length === 0) return;
-    
-        const username = inputEl.value;
+        const username = event.target[0].value;
+
+        if(username === '') {
+            alert('Por favor preencha um nome de usuário válido (do GitHub)')
+        };
+
         console.log(`username: ${username}`)
     
         this.props.listRepositories(username);

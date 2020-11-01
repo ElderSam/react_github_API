@@ -41,13 +41,18 @@ export default class List extends Component {
         //console.log(repositories);
 
         return(
-            <MaterialTable
-            columns={columns}
-            data={repositories}
-            title="Tabela de Repositórios"
-            icons={tableIcons}
-            localization={TranslateTable}
-          />
+          <>
+            {this.renderLoading()}
+
+              <MaterialTable
+              columns={columns}
+              data={repositories}
+              title="Tabela de Repositórios"
+              icons={tableIcons}
+              localization={TranslateTable}
+            />
+          </>
+
         );
     }
 }
