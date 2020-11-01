@@ -38,7 +38,7 @@ export default class List extends Component {
         const repositories = this.props.repos;
 
         const { columns } = this.state;
-        console.log(repositories);
+        //console.log(repositories);
 
         return(
             <MaterialTable

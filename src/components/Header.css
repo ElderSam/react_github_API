@@ -1,0 +1,17 @@
+.App-header {
+    background-color: black;
+    color: white;
+    top: 0;
+}
+
+.App-header h1 {
+    text-align: center;
+}
+
+form button {
+    background-color: greenyellow;
+    border: 2px solid rgb(21, 94, 6);
+    padding: 2px;
+    border-radius: 5px;
+    font-weight: bold;
+}

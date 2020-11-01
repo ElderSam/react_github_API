@@ -1,23 +1,28 @@
 import './App.css';
 import React, { Component } from 'react';
 import api from './api';
+
+import Header from './components/Header';
 import List from './components/List';
 
 export default class App extends Component {
 
-  state = {
-    repositories: [],
-    inputEl: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      repositories: [],
+      inputEl: []
+    };
+
+    this.addRepository = this.addRepository.bind(this)
   }
 
-  changeInput(event) {
-    this.setState({ inputEl: event.target }) 
-  }
+  
 
   async addRepository(event) { //adiciona repositório
     event.preventDefault();
 
-    const { inputEl } = this.state;
+    const inputEl = event.target[0];
     if(inputEl.length === 0) return;
 
     const username = inputEl.value;
@@ -46,20 +51,10 @@ export default class App extends Component {
 
     return(
       <div className="App">
-        <header className="App-header">
-          <h1>App GitHub!</h1>       
-        </header>
-      
-        <form id="repository-form" onSubmit={ (event) => this.addRepository(event) }>
-          <input type="text" name="username"
-            placeholder="digite um usuário"
-            onChange={ (event) => this.changeInput(event)}  
-          />
-          <button type="submit">Pesquisar</button>
-        </form>
-
+        <Header addRepository={this.addRepository} />
         <List repos={repositories} />
       </div>
     );
   }
+
 }

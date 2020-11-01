@@ -7,7 +7,10 @@ iniciar aplicação React:
     npm start
 
 -------------
-OBS: eu tive alguns problemas usando 'material-table', pois não aparecia os ícones da tabe.a Então encontrei esse link https://github.com/mbrn/material-table, que me ajudou a resolver isso. 
+OBS: 
+    Eu tive alguns problemas usando 'material-table', pois não aparecia os ícones da tabe.a Então encontrei esse link https://github.com/mbrn/material-table, que me ajudou a resolver isso. 
+
+    Também tive dificuldades em passar um método/função para um componente filho poder chamar. Procurei por horas na internet, até que depois de muitas tentativas encontrei a solução no link: https://maxlibin.com/react-call-parent-function-on-es6/
 
 --------------------------------------------------------------
 # Getting Started with Create React App
