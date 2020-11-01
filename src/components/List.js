@@ -58,6 +58,9 @@ export default class List extends Component {
               title="Tabela de Repositórios"
               icons={tableIcons}
               localization={TranslateTable}
+              options={{
+                exportButton: true
+              }}
             />
           </>
 

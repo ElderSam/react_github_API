@@ -1,5 +1,6 @@
 import React from 'react';
 
+//https://github.com/mbrn/material-table/issues/51
 import { forwardRef } from 'react';
 
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
@@ -10,13 +11,14 @@ import DeleteOutline from '@material-ui/icons/DeleteOutline';
 import FilterList from '@material-ui/icons/FilterList';
 import FirstPage from '@material-ui/icons/FirstPage';
 import LastPage from '@material-ui/icons/LastPage';
+import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 
 const tableIcons = {
 
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
   Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
-
+  Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
   Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
   FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
   LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
