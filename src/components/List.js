@@ -26,6 +26,7 @@ export default class List extends Component {
         const columns = [
           { title: 'Nome', field: 'name' },
           { title: 'Descrição', field: 'description' },
+          { title: 'Linguagem', field: 'language' },
           {
             title: 'Link',
             field: 'html_url',

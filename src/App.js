@@ -60,12 +60,12 @@ export default class App extends Component {
       const result = await api.get(`users/${username}/repos`)
       console.log(result);
   
-      const aux = result.data.map(({ name, description, html_url, owner:{ avatar_url } }) => {
+      const aux = result.data.map(({ name, description, html_url, language }) => {
         return {
           name,
           description,
           html_url,
-          avatar_url,
+          language
         }
       });
   
