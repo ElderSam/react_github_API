@@ -1,3 +1,14 @@
+# Aplicação em React utilizando a API do GitHub
+
+
+![ci](https://github.com/conventional-changelog/standard-version/workflows/ci/badge.svg)
+
+Demo: https://github-app-react.herokuapp.com/
+
+<img src='/public/demo-desktop.png' alt='demo desktop' />
+
+<img src='/public/demo-mobile.png' alt='demo mobile' />
+-----------
 Instruções:
 
 instalar dependências: 
