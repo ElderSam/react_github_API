@@ -5,6 +5,7 @@ import api from './api';
 import Header from './components/Header';
 import UserDetails from './components/UserDetails';
 import List from './components/List';
+import Footer from './components/Footer';
 
 export default class App extends Component {
 
@@ -88,6 +89,8 @@ export default class App extends Component {
 
         <UserDetails userData={userData} />
         <List repos={repositories} loading={loading} />
+
+        <Footer />
       </div>
     );
   }

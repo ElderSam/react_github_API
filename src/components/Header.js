@@ -42,9 +42,7 @@ export default class Header extends Component {
                 placeholder="digite um usuário"
             />
             <button type="submit">Pesquisar</button>
-            </form>
-
-            <a href="https://github.com/ElderSam/react_github_API">código fonte</a>            
+            </form>         
         </header>
     );
   }
