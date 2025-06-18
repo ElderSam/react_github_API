@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SearchIcon from '@mui/icons-material/Search';
 
 import GitHubLogo from '../assets/github-logo.png';
 import "./Header.css";
@@ -33,15 +34,17 @@ export default class Header extends Component {
             </div>
 
             <form
-            id="repository-form"
-            onSubmit={(event) => this.dogetGitHubDataFromChild(event)}
+                id="repository-form"
+                onSubmit={(event) => this.dogetGitHubDataFromChild(event)}
             >
-            <input
-                type="text"
-                name="username"
-                placeholder="enter a username"
-            />
-            <button type="submit">Search</button>
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="enter a username"
+                />
+                <button type="submit">
+                    <SearchIcon sx={{ color: 'inherit' }} alt="search" />
+                </button>
             </form>         
         </header>
     );
