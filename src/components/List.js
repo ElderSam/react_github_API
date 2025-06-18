@@ -63,12 +63,12 @@ export default function List({ repos, loading }) {
           disableSelectionOnClick
           loading={loading}
           localeText={{
-            noRowsLabel: 'Nenhum registro para exibir',
-            toolbarDensity: 'Densidade',
-            toolbarDensityLabel: 'Densidade',
-            toolbarDensityCompact: 'Compacto',
-            toolbarDensityStandard: 'Padrão',
-            toolbarDensityComfortable: 'Confortável',
+            noRowsLabel: 'No records to display',
+            toolbarDensity: 'Density',
+            toolbarDensityLabel: 'Density',
+            toolbarDensityCompact: 'Compact',
+            toolbarDensityStandard: 'Standard',
+            toolbarDensityComfortable: 'Comfortable',
           }}
         />
       </div>
