@@ -2,19 +2,19 @@
 
 const TranslateTable = {
     body: {
-        emptyDataSourceMessage: 'Nenhum registro para exibir'
+        emptyDataSourceMessage: 'No records to display',
     },
     toolbar: {
-        searchTooltip: 'Pesquisar',
-        searchPlaceholder: 'Pesquisar'
+        searchTooltip: 'Search',
+        searchPlaceholder: 'Search'
     },
     pagination: {
-        labelRowsSelect: 'linhas',
-        labelDisplayedRows: '{count} de {from}-{to}',
-        firstTooltip: 'Primeira página',
-        previousTooltip: 'Página anterior',
-        nextTooltip: 'Próxima página',
-        lastTooltip: 'Última página'
+        labelRowsSelect: 'rows',
+        labelDisplayedRows: '{count} of {from}-{to}',
+        firstTooltip: 'First page',
+        previousTooltip: 'Previous page',
+        nextTooltip: 'Next page',
+        lastTooltip: 'Last page'
     }
 }
 

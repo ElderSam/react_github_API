@@ -49,7 +49,7 @@ export default class App extends Component {
 
     }catch(err) {
       console.log(err)
-      alert('O usuário não existe!');
+      alert('User not found!');
 
       return false;
     }

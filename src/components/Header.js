@@ -16,7 +16,7 @@ export default class Header extends Component {
         const username = event.target[0].value;
 
         if(username === '') {
-            alert('Por favor preencha um nome de usuário válido (do GitHub)')
+            alert('Please enter a valid GitHub username!');
         };
 
         console.log(`username: ${username}`)
@@ -39,9 +39,9 @@ export default class Header extends Component {
             <input
                 type="text"
                 name="username"
-                placeholder="digite um usuário"
+                placeholder="enter a username"
             />
-            <button type="submit">Pesquisar</button>
+            <button type="submit">Search</button>
             </form>         
         </header>
     );

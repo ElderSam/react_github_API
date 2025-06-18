@@ -41,19 +41,19 @@ export default class UserDetails extends Component {
                 <div className="div-info">
                     <a id='github-link' href={html_url} target="_blank" rel="noreferrer">GitHub</a>
    
-                    <p>seguidores: {followers}</p>
-                    <p>seguindo: {following}</p>
+                    <p>followers: {followers}</p>
+                    <p>following: {following}</p>
 
-                    <p>criado em: {this.formatDateandHour(created_at)}</p>
-                    <p>atualizado em: {this.formatDateandHour(updated_at)}</p>
+                    <p>created at: {this.formatDateandHour(created_at)}</p>
+                    <p>updated at: {this.formatDateandHour(updated_at)}</p>
                 </div>
 
                 <div className="div-info">
                     <h4>Login: {login}</h4>
-                    <h4>Nome: {name}</h4>
-                    <p>Descrição: {bio}</p>
-                    <p>empresa: {company}</p>
-                    <p>local: {location}</p>
+                    <h4>Name: {name}</h4>
+                    <p>Description: {bio}</p>
+                    <p>Company: {company}</p>
+                    <p>Location: {location}</p>
                     <p>e-mail: {email}</p>
                     <p>{renderSite}</p>
                     <p>{renderBlog}</p>

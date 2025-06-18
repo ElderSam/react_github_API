@@ -5,8 +5,8 @@ export default class Footer extends React.Component {
     render() {
         return (
             <footer className='footer'>
-                <p>Desenvolvido por ElderSam ✨</p>
-                <a href="https://github.com/ElderSam/react_github_API">código fonte</a>   
+                <p>Developed by ElderSam ✨</p>
+                <a href="https://github.com/ElderSam/react_github_API">source code</a>   
             </footer>
         );
     }

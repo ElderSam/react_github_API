@@ -6,9 +6,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 export default function List({ repos, loading }) {
   const columns = [
-    { field: 'name', headerName: 'Nome', flex: 1 },
-    { field: 'description', headerName: 'Descrição', flex: 2 },
-    { field: 'language', headerName: 'Linguagem', flex: 1 },
+    { field: 'name', headerName: 'Name', flex: 1 },
+    { field: 'description', headerName: 'Description', flex: 2 },
+    { field: 'language', headerName: 'Language', flex: 1 },
     {
       field: 'html_url',
       headerName: 'Link',
@@ -40,7 +40,7 @@ export default function List({ repos, loading }) {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      {loading && <h3 id="loading">Carregando ...</h3>}
+      {loading && <h3 id="loading">Loading ...</h3>}
       <div style={{ height: 600, width: '100%' }}>
         <DataGrid
           sx={{
