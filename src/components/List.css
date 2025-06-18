@@ -9,7 +9,7 @@
 }
 
 .repo-link {
-    background-color: black;
+    background-color: #5663bd;
     color: white;
     text-decoration: none;
 
@@ -18,5 +18,5 @@
 }
 
 .repo-link:hover {
-    background-color: grey;
+    background-color: #5c3f7b;
 }

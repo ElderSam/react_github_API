@@ -1,5 +1,5 @@
 section {
-    background-color: rgb(220, 220, 220);
+    background-color: #2d2d2d;
     margin: 20px;
     padding: 6px;
     border-radius: 10px;
@@ -11,7 +11,7 @@ section {
 
 section .div-info {
     margin: 10px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(160, 160, 160);
     padding: 10px;
     width: 300px;
 }

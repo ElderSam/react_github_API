@@ -35,6 +35,11 @@ export default function List({ repos, loading }) {
       {loading && <h3 id="loading">Carregando ...</h3>}
       <div style={{ height: 600, width: '100%' }}>
         <DataGrid
+          sx={{
+            '& .MuiDataGrid-cell': {
+              backgroundColor: '#d1d1d1',
+            },
+          }}
           rows={rows}
           columns={columns}
           pageSize={10}

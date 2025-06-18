@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.App {
+  background-color: black;
+}
+
 #repository-form {
   /* centered element */
   margin: auto;
