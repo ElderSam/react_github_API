@@ -1,70 +1,57 @@
 import './List.css';
-import React, { Component } from 'react';
+import React from 'react';
+import { DataGrid } from '@mui/x-data-grid';
 
-// import MaterialTable from "material-table";
-import tableIcons from './utils/material-table/MaterialTableIcons';
-import TranslateTable from './utils/material-table/TranslateTable';
+export default function List({ repos, loading }) {
+  const columns = [
+    { field: 'name', headerName: 'Nome', flex: 1 },
+    { field: 'description', headerName: 'Descrição', flex: 2 },
+    { field: 'language', headerName: 'Linguagem', flex: 1 },
+    {
+      field: 'html_url',
+      headerName: 'Link',
+      flex: 1,
+      renderCell: (params) => (
+        <a
+          href={params.value}
+          target="_blank"
+          rel="noreferrer"
+          className="repo-link"
+        >
+          Link
+        </a>
+      ),
+    },
+  ];
 
-export default class List extends Component {
-    state = {
-        columns: []
-    }
-    componentDidMount() {
-        this.setTableColumns()
-    }
+  // DataGrid expects an 'id' field for each row
+  const rows = repos.map((repo, idx) => ({
+    id: repo.id || idx,
+    ...repo,
+  }));
 
-    renderLoading() {
-      if(this.props.loading === true) {
-        return(
-          <h3 id='loading'>Carregando ...</h3>
-        )
-      }
-    }
-
-    setTableColumns() {
-        
-        const columns = [
-          { title: 'Nome', field: 'name' },
-          { title: 'Descrição', field: 'description' },
-          { title: 'Linguagem', field: 'language' },
-          {
-            title: 'Link',
-            field: 'html_url',
-            render: rowData =>
-              <a href={rowData.html_url}
-              target='_blank' rel='noreferrer'
-              className='repo-link'>
-                Link
-              </a>
-          },
-          
-        ]
-    
-        this.setState({ columns });
-    }
-
-    render() {
-        const repositories = this.props.repos;
-
-        const { columns } = this.state;
-        //console.log(repositories);
-
-        return(
-          <>
-            {this.renderLoading()}
-          <h1>Table HERE</h1>
-              {/* <MaterialTable
-              columns={columns}
-              data={repositories}
-              title="Tabela de Repositórios"
-              icons={tableIcons}
-              localization={TranslateTable}
-              options={{
-                exportButton: true
-              }}
-            /> */}
-          </>
-
-        );
-    }
+  return (
+    <>
+      {loading && <h3 id="loading">Carregando ...</h3>}
+      <div style={{ height: 600, width: '100%' }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={10}
+          rowsPerPageOptions={[10, 25, 50]}
+          disableSelectionOnClick
+          loading={loading}
+          localeText={{
+            noRowsLabel: 'Nenhum registro para exibir',
+            toolbarDensity: 'Densidade',
+            toolbarDensityLabel: 'Densidade',
+            toolbarDensityCompact: 'Compacto',
+            toolbarDensityStandard: 'Padrão',
+            toolbarDensityComfortable: 'Confortável',
+            // Add more translations as needed
+          }}
+        />
+      </div>
+    </>
+  );
 }
