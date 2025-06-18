@@ -11,9 +11,13 @@ section {
 
 section .div-info {
     margin: 10px;
-    background-color: rgb(160, 160, 160);
+    background-color: #1a1a1a;
     padding: 10px;
     width: 300px;
+}
+
+section .div-info a {
+    color: #9292ff;
 }
 
 #avatar {

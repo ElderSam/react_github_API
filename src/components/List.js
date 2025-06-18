@@ -1,6 +1,8 @@
 import './List.css';
 import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 export default function List({ repos, loading }) {
   const columns = [
@@ -24,20 +26,34 @@ export default function List({ repos, loading }) {
     },
   ];
 
-  // DataGrid expects an 'id' field for each row
   const rows = repos.map((repo, idx) => ({
     id: repo.id || idx,
     ...repo,
   }));
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+
   return (
-    <>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       {loading && <h3 id="loading">Carregando ...</h3>}
       <div style={{ height: 600, width: '100%' }}>
         <DataGrid
           sx={{
-            '& .MuiDataGrid-cell': {
-              backgroundColor: '#d1d1d1',
+            '& .MuiDataGrid-footerContainer': {
+              backgroundColor: '#181818',
+              color: '#fff',
+            },
+            '& .MuiTablePagination-toolbar': {
+              backgroundColor: '#181818',
+              color: '#fff',
+            },
+            '& .MuiTablePagination-actions button': {
+              color: '#fff',
             },
           }}
           rows={rows}
@@ -53,10 +69,9 @@ export default function List({ repos, loading }) {
             toolbarDensityCompact: 'Compacto',
             toolbarDensityStandard: 'Padrão',
             toolbarDensityComfortable: 'Confortável',
-            // Add more translations as needed
           }}
         />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
