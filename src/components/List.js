@@ -1,7 +1,7 @@
 import './List.css';
 import React, { Component } from 'react';
 
-import MaterialTable from "material-table";
+// import MaterialTable from "material-table";
 import tableIcons from './utils/material-table/MaterialTableIcons';
 import TranslateTable from './utils/material-table/TranslateTable';
 
@@ -52,8 +52,8 @@ export default class List extends Component {
         return(
           <>
             {this.renderLoading()}
-
-              <MaterialTable
+          <h1>Table HERE</h1>
+              {/* <MaterialTable
               columns={columns}
               data={repositories}
               title="Tabela de Repositórios"
@@ -62,7 +62,7 @@ export default class List extends Component {
               options={{
                 exportButton: true
               }}
-            />
+            /> */}
           </>
 
         );
