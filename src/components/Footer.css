@@ -1,13 +1,17 @@
-footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    min-height: 40px;
-    padding: 5px;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #181818; /* match your dark mode */
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  z-index: 100;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 footer p {
